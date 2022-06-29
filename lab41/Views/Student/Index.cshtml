@@ -1,0 +1,60 @@
+﻿@model IEnumerable<lab41.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.indeks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwisko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wiek)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.indeks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwisko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wiek)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

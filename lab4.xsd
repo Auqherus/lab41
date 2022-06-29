@@ -1,0 +1,24 @@
+﻿<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://tempuri.org/PurchaseOrderSchema.xsd"
+           targetNamespace="http://tempuri.org/PurchaseOrderSchema.xsd"
+           elementFormDefault="qualified">
+ <xsd:element name="PurchaseOrder" type="tns:PurchaseOrderType"/>
+ <xsd:complexType name="PurchaseOrderType">
+  <xsd:sequence>
+   <xsd:element name="ShipTo" type="tns:Adresy" maxOccurs="2"/>
+   <xsd:element name="BillTo" type="tns:Adresy"/>
+  </xsd:sequence>
+  <xsd:attribute name="Data_zamowienia" type="xsd:date"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="Adresy">
+  <xsd:sequence>
+   <xsd:element name="nazwa"   type="xsd:string"/>
+   <xsd:element name="ulica" type="xsd:string"/>
+   <xsd:element name="miasto"   type="xsd:string"/>
+   <xsd:element name="wojewodztwo"  type="xsd:string"/>
+   <xsd:element name="kod_pocztowy"    type="xsd:integer"/>
+  </xsd:sequence>
+  <xsd:attribute name="kraj" type="xsd:NMTOKEN" fixed="US"/>
+ </xsd:complexType>
+</xsd:schema>
